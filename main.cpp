@@ -52,26 +52,26 @@ void FindMark(HANDLE& game_process, vector<unsigned long long>& vOutput)
 
     unsigned long long find_value = 0;
     DWORD bytes_read = 0;
-    //Начальный адрес(ищем по топ 1 игрока в ЧитЕнжин)
+    //РќР°С‡Р°Р»СЊРЅС‹Р№ Р°РґСЂРµСЃ(РёС‰РµРј РїРѕ С‚РѕРї 1 РёРіСЂРѕРєР° РІ Р§РёС‚Р•РЅР¶РёРЅ)
     unsigned long long adress = 0x21C7DC48E10;
-    //Вектор с байтами строки для ориентира в памяти
+    //Р’РµРєС‚РѕСЂ СЃ Р±Р°Р№С‚Р°РјРё СЃС‚СЂРѕРєРё РґР»СЏ РѕСЂРёРµРЅС‚РёСЂР° РІ РїР°РјСЏС‚Рё
     vector<unsigned long long> vSequence = { 0x7B, 0x22, 0x61, 0x76, 0x61, 0x74, 0x61, 0x72 };
-    //Предыдущее число(сначала равно оччкам топ1 + 1 )
+    //РџСЂРµРґС‹РґСѓС‰РµРµ С‡РёСЃР»Рѕ(СЃРЅР°С‡Р°Р»Р° СЂР°РІРЅРѕ РѕС‡С‡РєР°Рј С‚РѕРї1 + 1 )
     unsigned long long prev = 6245602073;
-    //Основной цикл
+    //РћСЃРЅРѕРІРЅРѕР№ С†РёРєР»
     int i = 0;
     int pos = 1;
     while (pos <= 999)
     {
-        //Читаем память по байтово
+        //Р§РёС‚Р°РµРј РїР°РјСЏС‚СЊ РїРѕ Р±Р°Р№С‚РѕРІРѕ
         ReadProcessMemory(game_process, (void*)(adress), &find_value, 1, (SIZE_T*)bytes_read);
         adress += 0x1;
-        //Ищем наш ориентир
+        //РС‰РµРј РЅР°С€ РѕСЂРёРµРЅС‚РёСЂ
         if (find_value == vSequence[i])
             ++i;
         else
             i = 0;
-        //Если нашли ориентир
+        //Р•СЃР»Рё РЅР°С€Р»Рё РѕСЂРёРµРЅС‚РёСЂ
         if (i == vSequence.size() - 1)
         {
             unsigned long long temp = 0;
