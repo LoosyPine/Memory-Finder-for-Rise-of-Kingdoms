@@ -12,3 +12,12 @@ WinAPI. RAM read and search.
 # P.S.
 Для толчка в поиске нужен адрес топ 1 игрока в рейтинге. Его можно получить из CheatEngine(Сделать поиск по значению).
 Это можно реализовать в самой программе через WinAPI.
+# Tutorial(ENG)
+Download and install CheatEngine(https://www.cheatengine.org/downloads.php)
+Run CheatEngine and select game procces(*.exe)
+Select "Type of serach" on exact value and "Type of value" select on 8 bytes
+Open in the game "rating on personal murders" and write on paper top 1 player score
+Open CheatEngine and write top 1 player score in value search field, click "Search"
+You may find several values, if you don't go into details, it's easier to just sort them out.
+Copy the memory address of the found value and paste in my programm(in filed "unsigned long long adress = YOUR ADDRESS;")
+Run programm:)
