@@ -22,7 +22,7 @@ Select "Type of serach" on exact value and "Type of value" select on 8 bytes
 # 4
 Open in the game "rating on personal murders" and write on paper top 1 player score
 # 5
-Open CheatEngine and write top 1 player score in value search field, click "Search"
+Open CheatEngine and write top 1 player score in value search field, click "Search" P.S. You need write score of top 1 player in filed: unsigned long long prev = HIM SCORE + 1;
 # 6
 You may find several values, if you don't go into details, it's easier to just sort them out.
 # 7
